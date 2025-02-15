@@ -1,0 +1,316 @@
+﻿/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    /*padding-top: 50px;*/
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+/*input,
+select,
+textarea {
+    max-width: 280px;
+}*/
+
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .jumbotron {
+        margin-top: 20px;
+    }
+}
+
+/* Custom */
+@font-face {
+    font-family: 'DIN Black';
+    src: url('fonts/DIN-Black.woff2');
+}
+@font-face {
+    font-family: 'DIN Cond-Light';
+    src: url('fonts/DIN-Cond-Light.woff2');
+}
+@font-face {
+    font-family: 'DIN Condensed-Bold';
+    src: url('fonts/DIN-Condensed-Bold.woff2');
+}
+@font-face {
+    font-family: 'DIN Bold';
+    src: url('fonts/DIN-Bold.woff2');
+}
+@font-face {
+    font-family: 'Manus';
+    src: url('fonts/MANUS.woff2');
+}
+@font-face {
+    font-family: 'DIN Regular-Italic';
+    src: url('fonts/DIN-Regular-Italic.woff2');
+}
+@font-face {
+    font-family: 'DIN Regular';
+    src: url('fonts/DIN-Regular.woff2');
+}
+@font-face {
+    font-family: FontAwesome;
+    src: url('fonts/fontawesome-webfont.woff2');
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:focus {
+    background: #304f73;
+}
+.fa-percent::before{
+    content: '%';
+}
+.select2{
+    width:100% !important;
+}
+.btn.disabled, .btn:disabled{
+    background: #ccc;
+}
+.btnInputForm.active, .btnDonataire.active, #btnSynthese.active, #btnSyntheseTaxePere.active, #btnSyntheseTaxeMere.active, #btnTaxeDonation.active, #btnSynthaseDonation.active, .btnDonataireResult.active {
+    background: rgb(136, 46, 20);
+    color: #fff;
+}
+.btnRappelPere.active, .btnRappelMere.active, .btnRappelPereResult.active, .btnRappelMereResult.active {
+    background: #ff7800;
+    color: #fff;
+}
+
+.ff-din-cond-light {
+    font-family: 'DIN Cond-Light';
+}
+
+.form-group{
+    margin-bottom:0.5rem;
+}
+.btn-primary, .btn-default, .btn-success, .btn-warning {
+    border-color: transparent;
+    font-family: DIN Cond-Light;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    border-radius: 0.5rem;
+}
+.btn-default {
+    border-color: #ccc !important;
+}
+i{
+    font-style:normal;
+}
+.fa-2x {
+    font-size: 1.5em
+}
+strong{
+    font-weight: bold;
+}
+h1 {
+    font-family: 'DIN Black';
+    padding: 0.5rem 0;
+    color: #2C4F70;
+    font-size: 2.2rem;
+}
+h2 {
+    font-size: 3rem;
+    font-family: 'DIN Cond-Light';
+    color: #1D9BD7;
+}
+.lead {
+    font-size: 3rem;
+    font-family: 'DIN Cond-Light';
+    text-align: justify;
+    line-height: 1.2;
+    color: #1D9BD7;
+}
+h5 {
+    font-family: 'DIN Regular-Italic';
+}
+.navbar-toggle {
+    float: left;
+    margin-left: 15px;
+}
+.navbar-header-logo {
+    background: #304f73;
+    padding: 15px 0;
+}
+hr {
+    margin: 0;
+    border: 0;
+    border-top: 15px solid #8FC73E;
+}
+.body-content hr, .main-content hr {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.navbar-fixed-top {
+    border-width: 0 0 0px;
+}
+.nav-link {
+    padding: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+.body-content ul, #MobileMaster ul, footer ul {
+    padding-left: 0;
+    list-style: none;
+    margin-left: 1.5rem;
+}
+.body-content li, #MobileMaster li {
+    padding-left: 1rem;
+}
+footer ul {
+    margin-left: 0;
+}
+/*.body-content li::before, #MobileMaster li::before {
+    content: "\f061";
+    font-family: FontAwesome;
+    color: #8FC73E;
+    display:inline-block;
+    padding-right: 0.6rem;
+    margin-left: -1.5rem;
+}*/
+.call-center-section {
+    background: #FF7800;
+    font-size: 2rem;
+    padding: 1rem 0;
+}
+.complete-solution-section {
+    background: #2C4F70;
+    color: #FFF;
+}
+.banner-section {
+    background: #8FC73E;
+    height: 7rem;
+    /*margin-top: 160px;*/
+}
+.banner-section img {
+    /*margin-top: -160px;*/
+}
+#MobileMaster .banner-section {
+    margin-top: 80px;
+    height:60px;
+}
+#MobileMaster .banner-section img {
+    margin-top: -51px;
+}
+.btn-video, .btn-infos {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #ffffff !important;
+    font-weight: bold;
+    margin: 0 15px 15px 0;
+    width: 6rem;
+}
+.btn-contact {
+    background-image: url(/images/Bouton-vert.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    color: #ffffff !important;
+    font-weight: bold;
+    margin: 0;
+    width: 7rem;
+}
+.body-content .fa, .fa{
+    margin-right: 0.5rem;
+    margin-left:0.5rem
+}
+footer {
+    background: #304f73;
+    color: white;
+    padding: 1rem 0;
+}
+
+.card {
+    border-radius: 1rem 1rem 0 0;
+    border: none;
+    margin-bottom: 1rem;
+}
+.card-header {
+    text-align: center;
+    color: white;
+    font-family: 'DIN Cond-Light';
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 0 2rem;
+    background: #304f73;
+    border-radius: 1rem 1rem 0 0 !important;
+}
+.card-header .btn {
+    position: absolute;
+    left: 2px;
+    padding: 0;
+    margin-top: 6px;
+    color: #fff;
+}
+.card-body {
+    padding: 0.5rem 1rem 0 1rem;
+    background: #c6eafb;
+}
+.sub-card {
+    margin: 0 -1rem 0 -1rem;
+}
+.card-body > .sub-card:first-child {
+    margin: -0.5rem -1rem 0 -1rem;
+}
+.sub-card .card-header {
+    background: #01abe4;
+    border-radius: 0 !important;
+}
+.select2-container .select2-selection--single {
+    height: calc(1.5em + 0.75rem + 2px);
+}
+.select2-container .select2-selection--single .select2-selection__rendered{
+    padding-top: 4px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    top:6px;
+}
+/*.checkbox{
+    margin-top:0.5rem;
+}*/
+input[type='checkbox'], input[type='radio'] {
+    margin-right: 0.5rem;
+    margin-top:0.9rem;
+}
+.form-control-feedback {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    color: grey;
+}
+.display-5{
+    font-size:2.5rem;
+}
+.display-6 {
+    font-size: 2rem;
+}
+.modal-header, .modal-footer{
+    padding:0.5rem 1rem;
+}
+.select2-selection__clear {
+    display: none;
+}
+.required {
+    border-color: #dc3545;
+    padding-right: calc(1.5em + 0.75rem) !important;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+#preloader {
+    position: fixed;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    backdrop-filter: blur(1px);
+}
+.preloader-wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}

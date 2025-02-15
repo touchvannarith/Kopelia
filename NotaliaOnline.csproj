@@ -1,0 +1,859 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{649A64FD-CBF5-4BAA-861F-5AC5657136F6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NotaliaOnline</RootNamespace>
+    <AssemblyName>NotaliaOnline</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44316</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AspNet.ScriptManager.bootstrap, Version=4.6.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\AspNet.ScriptManager.bootstrap.4.6.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.2.1.35\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=4.0.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Abonnement.aspx" />
+    <Content Include="Administrator_login.aspx" />
+    <Content Include="BF01.aspx" />
+    <Content Include="BF02-11.aspx" />
+    <Content Include="BF02-121.aspx" />
+    <Content Include="BF02-122.aspx" />
+    <Content Include="BF02-13.aspx" />
+    <Content Include="BF02-16.aspx" />
+    <Content Include="BF02-19.aspx" />
+    <Content Include="BF02-2.aspx" />
+    <Content Include="BF02-5.aspx" />
+    <Content Include="BF02-9.aspx" />
+    <Content Include="BF03.aspx" />
+    <Content Include="BF04.aspx" />
+    <Content Include="BF061.aspx" />
+    <Content Include="BF062.aspx" />
+    <Content Include="BF08.aspx" />
+    <Content Include="BF09.aspx" />
+    <Content Include="BF10.aspx" />
+    <Content Include="BF11.aspx" />
+    <Content Include="BF12-1.aspx" />
+    <Content Include="BF12-10.aspx" />
+    <Content Include="BF12-12.aspx" />
+    <Content Include="BF12-1b.aspx" />
+    <Content Include="BF12-2.aspx" />
+    <Content Include="BF12-2b.aspx" />
+    <Content Include="BF12-3.aspx" />
+    <Content Include="BF12-7.aspx" />
+    <Content Include="BF12-8.aspx" />
+    <Content Include="BF12-9.aspx" />
+    <Content Include="BF13.aspx" />
+    <Content Include="BF15.aspx" />
+    <Content Include="BF17.aspx" />
+    <Content Include="Confirmation_du_compte.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\select2.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DON-01.aspx" />
+    <Content Include="DON-DROITS.aspx" />
+    <Content Include="DON01.aspx" />
+    <Content Include="DON02.aspx" />
+    <Content Include="Espace_client.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Fonctionnalités.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="images\100-compatible.png" />
+    <Content Include="images\demembrement.png" />
+    <Content Include="images\divorce-partage.png" />
+    <Content Include="images\donations-successions.png" />
+    <Content Include="images\Kopelia-a-logo.png" />
+    <Content Include="images\Kopelia-a-logo1.png" />
+    <Content Include="images\logiciel-calcul-notaire.png" />
+    <Content Include="images\logo_kopelia.PNG" />
+    <Content Include="images\plus-values.png" />
+    <Content Include="images\signature.png" />
+    <Content Include="images\ventes-cessions.png" />
+    <Content Include="Connexion.aspx" />
+    <Content Include="NotaliaOnlineModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>NotaliaOnlineModel.Context.cs</LastGenOutput>
+      <DependentUpon>NotaliaOnlineModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="NotaliaOnlineModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>NotaliaOnlineModel.edmx</DependentUpon>
+      <LastGenOutput>NotaliaOnlineModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\BF01.js" />
+    <Content Include="Scripts\BF02-11.js" />
+    <Content Include="Scripts\BF02-122.js" />
+    <Content Include="Scripts\BF02-121.js" />
+    <Content Include="Scripts\BF02-13.js" />
+    <Content Include="Scripts\BF02-16.js" />
+    <Content Include="Scripts\BF02-19.js" />
+    <Content Include="Scripts\BF02-2.js" />
+    <Content Include="Scripts\BF02-5.js" />
+    <Content Include="Scripts\BF02-9.js" />
+    <Content Include="Scripts\BF03.js" />
+    <Content Include="Scripts\BF04.js" />
+    <Content Include="Scripts\BF061.js" />
+    <Content Include="Scripts\BF062.js" />
+    <Content Include="Scripts\BF08.js" />
+    <Content Include="Scripts\BF09.js" />
+    <Content Include="Scripts\BF10.js" />
+    <Content Include="Scripts\BF11.js" />
+    <Content Include="Scripts\BF12-12.js" />
+    <Content Include="Scripts\BF12-2b.js" />
+    <Content Include="Scripts\BF12-1b.js" />
+    <Content Include="Scripts\BF12-10.js" />
+    <Content Include="Scripts\BF12-1.js" />
+    <Content Include="Scripts\BF12-2.js" />
+    <Content Include="Scripts\BF12-3.js" />
+    <Content Include="Scripts\BF12-8.js" />
+    <Content Include="Scripts\BF12-7.js" />
+    <Content Include="Scripts\BF12-9.js" />
+    <Content Include="Scripts\BF13.js" />
+    <Content Include="Scripts\BF15.js" />
+    <Content Include="Scripts\BF17.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\charts.min.js" />
+    <Content Include="Scripts\DON-DROITS.js" />
+    <Content Include="Scripts\DON01.js" />
+    <Content Include="Scripts\DON02.js" />
+    <Content Include="Scripts\Site.js" />
+    <Content Include="Content\fonts\MANUS.woff2" />
+    <Content Include="Content\fonts\DIN-Black.woff2" />
+    <Content Include="Content\fonts\DIN-Bold.woff2" />
+    <Content Include="Content\fonts\DIN-Cond-Light.woff2" />
+    <Content Include="Content\fonts\DIN-Regular-Italic.woff2" />
+    <Content Include="Content\fonts\DIN-Regular.woff2" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="images\City.png" />
+    <Content Include="Scripts\DON-01.js" />
+    <Content Include="Scripts\Moment\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\Moment\locale-fr.js" />
+    <Content Include="Scripts\Moment\moment.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\select2.min.js" />
+    <Content Include="Scripts\SUCC-DROITS.js" />
+    <Content Include="Scripts\SUCC01.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Site.Master" />
+    <Content Include="SUCC-DROITS.aspx" />
+    <Content Include="SUCC01.aspx" />
+    <Content Include="Tarifs.aspx" />
+    <Content Include="UserManagement.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <EntityDeploy Include="NotaliaOnlineModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>NotaliaOnlineModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="NotaliaOnlineModel.edmx.diagram">
+      <DependentUpon>NotaliaOnlineModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\fonts\DIN-Condensed-Bold.woff2" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="SiteAdministrator.Master" />
+    <None Include="Web References\WebReference\ExcelService.disco" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+    <Content Include="Scripts\README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Abonnement.aspx.cs">
+      <DependentUpon>Abonnement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Abonnement.aspx.designer.cs">
+      <DependentUpon>Abonnement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Administrator_login.aspx.cs">
+      <DependentUpon>Administrator_login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Administrator_login.aspx.designer.cs">
+      <DependentUpon>Administrator_login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="BF01.aspx.cs">
+      <DependentUpon>BF01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF01.aspx.designer.cs">
+      <DependentUpon>BF01.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-11.aspx.cs">
+      <DependentUpon>BF02-11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-11.aspx.designer.cs">
+      <DependentUpon>BF02-11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-121.aspx.cs">
+      <DependentUpon>BF02-121.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-121.aspx.designer.cs">
+      <DependentUpon>BF02-121.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-122.aspx.cs">
+      <DependentUpon>BF02-122.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-122.aspx.designer.cs">
+      <DependentUpon>BF02-122.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-13.aspx.cs">
+      <DependentUpon>BF02-13.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-13.aspx.designer.cs">
+      <DependentUpon>BF02-13.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-16.aspx.cs">
+      <DependentUpon>BF02-16.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-16.aspx.designer.cs">
+      <DependentUpon>BF02-16.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-19.aspx.cs">
+      <DependentUpon>BF02-19.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-19.aspx.designer.cs">
+      <DependentUpon>BF02-19.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-2.aspx.cs">
+      <DependentUpon>BF02-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-2.aspx.designer.cs">
+      <DependentUpon>BF02-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-5.aspx.cs">
+      <DependentUpon>BF02-5.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-5.aspx.designer.cs">
+      <DependentUpon>BF02-5.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF02-9.aspx.cs">
+      <DependentUpon>BF02-9.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF02-9.aspx.designer.cs">
+      <DependentUpon>BF02-9.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF03.aspx.cs">
+      <DependentUpon>BF03.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF03.aspx.designer.cs">
+      <DependentUpon>BF03.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF04.aspx.cs">
+      <DependentUpon>BF04.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF04.aspx.designer.cs">
+      <DependentUpon>BF04.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF061.aspx.cs">
+      <DependentUpon>BF061.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF061.aspx.designer.cs">
+      <DependentUpon>BF061.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF062.aspx.cs">
+      <DependentUpon>BF062.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF062.aspx.designer.cs">
+      <DependentUpon>BF062.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF08.aspx.cs">
+      <DependentUpon>BF08.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF08.aspx.designer.cs">
+      <DependentUpon>BF08.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF09.aspx.cs">
+      <DependentUpon>BF09.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF09.aspx.designer.cs">
+      <DependentUpon>BF09.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF10.aspx.cs">
+      <DependentUpon>BF10.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF10.aspx.designer.cs">
+      <DependentUpon>BF10.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF11.aspx.cs">
+      <DependentUpon>BF11.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF11.aspx.designer.cs">
+      <DependentUpon>BF11.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-1.aspx.cs">
+      <DependentUpon>BF12-1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-1.aspx.designer.cs">
+      <DependentUpon>BF12-1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-10.aspx.cs">
+      <DependentUpon>BF12-10.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-10.aspx.designer.cs">
+      <DependentUpon>BF12-10.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-12.aspx.cs">
+      <DependentUpon>BF12-12.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-12.aspx.designer.cs">
+      <DependentUpon>BF12-12.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-1b.aspx.cs">
+      <DependentUpon>BF12-1b.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-1b.aspx.designer.cs">
+      <DependentUpon>BF12-1b.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-2.aspx.cs">
+      <DependentUpon>BF12-2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-2.aspx.designer.cs">
+      <DependentUpon>BF12-2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-2b.aspx.cs">
+      <DependentUpon>BF12-2b.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-2b.aspx.designer.cs">
+      <DependentUpon>BF12-2b.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-3.aspx.cs">
+      <DependentUpon>BF12-3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-3.aspx.designer.cs">
+      <DependentUpon>BF12-3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-7.aspx.cs">
+      <DependentUpon>BF12-7.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-7.aspx.designer.cs">
+      <DependentUpon>BF12-7.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-8.aspx.cs">
+      <DependentUpon>BF12-8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-8.aspx.designer.cs">
+      <DependentUpon>BF12-8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF12-9.aspx.cs">
+      <DependentUpon>BF12-9.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF12-9.aspx.designer.cs">
+      <DependentUpon>BF12-9.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF13.aspx.cs">
+      <DependentUpon>BF13.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF13.aspx.designer.cs">
+      <DependentUpon>BF13.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF15.aspx.cs">
+      <DependentUpon>BF15.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF15.aspx.designer.cs">
+      <DependentUpon>BF15.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BF17.aspx.cs">
+      <DependentUpon>BF17.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BF17.aspx.designer.cs">
+      <DependentUpon>BF17.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation_du_compte.aspx.cs">
+      <DependentUpon>Confirmation_du_compte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmation_du_compte.aspx.designer.cs">
+      <DependentUpon>Confirmation_du_compte.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConvertListToTable_Result.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_GetDbBackups_Result.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_GetDbFileInfo_Result.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard_GetDbInfo_Result.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataAccess\CalculezMaintenantDataAccess.cs" />
+    <Compile Include="DataAccess\ClientDataAccess.cs" />
+    <Compile Include="DataAccess\SimulationActeDataAccess.cs" />
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DON-01.aspx.cs">
+      <DependentUpon>DON-01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DON-01.aspx.designer.cs">
+      <DependentUpon>DON-01.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DON-DROITS.aspx.cs">
+      <DependentUpon>DON-DROITS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DON-DROITS.aspx.designer.cs">
+      <DependentUpon>DON-DROITS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DON01.aspx.cs">
+      <DependentUpon>DON01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DON01.aspx.designer.cs">
+      <DependentUpon>DON01.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DON02.aspx.cs">
+      <DependentUpon>DON02.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DON02.aspx.designer.cs">
+      <DependentUpon>DON02.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Espace_client.aspx.cs">
+      <DependentUpon>Espace_client.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Espace_client.aspx.designer.cs">
+      <DependentUpon>Espace_client.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Fonctionnalités.aspx.cs">
+      <DependentUpon>Fonctionnalités.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Fonctionnalités.aspx.designer.cs">
+      <DependentUpon>Fonctionnalités.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetDatabaseServer_Result.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GetUsersByPropertyName_Result.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\ApiDataAccess.cs" />
+    <Compile Include="Helpers\EmailService.cs" />
+    <Compile Include="Helpers\ExcelServiceHelper.cs" />
+    <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Helpers\HTMLToPDFBuilder.cs" />
+    <Compile Include="Helpers\PdfHelper.cs" />
+    <Compile Include="Helpers\SecurePasswordHasher.cs" />
+    <Compile Include="Helpers\Transformer.cs" />
+    <Compile Include="Connexion.aspx.cs">
+      <DependentUpon>Connexion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Connexion.aspx.designer.cs">
+      <DependentUpon>Connexion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Journal_SplitText_Result.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Journal_Split_Result.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\DeviceNumber.cs" />
+    <Compile Include="Models\Feature.cs" />
+    <Compile Include="Models\Link.cs" />
+    <Compile Include="Models\Offer.cs" />
+    <Compile Include="Models\Offers.cs" />
+    <Compile Include="Models\OnlineClient.cs" />
+    <Compile Include="Models\Subscription.cs" />
+    <Compile Include="NotaliaOnlineModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotaliaOnlineModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotaliaOnlineModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NotaliaOnlineModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotaliaOnlineModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="online_Calculez_Maintenant.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="online_Client.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="online_SIMULATION_ACTE.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="online_token.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\DbBase\ConfigurationManager.cs" />
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Mobile.Master.cs">
+      <DependentUpon>Site2.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Mobile.Master.designer.cs">
+      <DependentUpon>Site2.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SiteAdministrator.Master.cs">
+      <DependentUpon>SiteAdministrator.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SiteAdministrator.Master.designer.cs">
+      <DependentUpon>SiteAdministrator.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SUCC-DROITS.aspx.cs">
+      <DependentUpon>SUCC-DROITS.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUCC-DROITS.aspx.designer.cs">
+      <DependentUpon>SUCC-DROITS.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SUCC01.aspx.cs">
+      <DependentUpon>SUCC01.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SUCC01.aspx.designer.cs">
+      <DependentUpon>SUCC01.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tarifs.aspx.cs">
+      <DependentUpon>Tarifs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Tarifs.aspx.designer.cs">
+      <DependentUpon>Tarifs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagement.aspx.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserManagement.aspx.designer.cs">
+      <DependentUpon>UserManagement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="vw_online_Calculez_Maintenant.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_online_Simulation.cs">
+      <DependentUpon>NotaliaOnlineModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WebReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="images\logo\" />
+    <Folder Include="tmp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Site2.Master" />
+    <Content Include="Site2.Mobile.Master" />
+    <None Include="Web References\WebReference\ExcelService.wsdl" />
+    <Content Include="Web References\WebReference\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Web References\WebReference\SheetInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WebReference\Status.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WebReference\WorkbookItem.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <Content Include="Web References\WebReference\WorkbookModelInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://194.169.179.128/_vti_bin/ExcelService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WebReference\</RelPath>
+      <UpdateFromURL>http://194.169.179.128/_vti_bin/ExcelService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>NotaliaOnline_WebReference_ExcelService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>22658</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44317/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

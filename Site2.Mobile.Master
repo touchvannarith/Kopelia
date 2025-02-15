@@ -1,0 +1,206 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.Mobile.master.cs" Inherits="NotaliaOnline.Site2_Mobile" %>
+
+
+<%@ Register Src="~/ViewSwitcher.ascx" TagPrefix="friendlyUrls" TagName="ViewSwitcher" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+
+    <asp:PlaceHolder runat="server">
+        <%: Scripts.Render("~/bundles/modernizr") %>
+    </asp:PlaceHolder>
+
+    <webopt:BundleReference runat="server" Path="~/Content/css" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager runat="server">
+            <Scripts>
+                <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
+                <%--Framework Scripts--%>
+                <%--<asp:ScriptReference Name="MsAjaxBundle" />--%>
+                <asp:ScriptReference Name="jquery" />
+                <asp:ScriptReference Name="bootstrap" />
+                <%--<asp:ScriptReference Name="WebForms.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebForms.js" />
+                <asp:ScriptReference Name="WebUIValidation.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebUIValidation.js" />
+                <asp:ScriptReference Name="MenuStandards.js" Assembly="System.Web" Path="~/Scripts/WebForms/MenuStandards.js" />
+                <asp:ScriptReference Name="GridView.js" Assembly="System.Web" Path="~/Scripts/WebForms/GridView.js" />
+                <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
+                <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
+                <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
+                <asp:ScriptReference Name="WebFormsBundle" />--%>
+                <%--Site Scripts--%>
+            </Scripts>
+        </asp:ScriptManager>
+        <%: Scripts.Render("~/bundles/select2") %>
+        <%: Scripts.Render("~/bundles/datetimepicker") %>
+        <%: Scripts.Render("~/bundles/toastr") %>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div>
+                <a class="text-muted" href="https://www.facebook.com/notalia" target="_blank"><i class="fa fa-facebook-square fa-3x ml-2 mr-0"></i></a>
+                <a class="text-muted" href="https://twitter.com/logicielnotalia" target="_blank"><i class="fa fa-twitter-square fa-3x ml-2 mr-0"></i></a>
+                <asp:LinkButton runat="server" ID="btnSignIn" class="text-muted" OnClick="btnSignIn_Click"><i class="fa fa-sign-in fa-3x ml-2 mr-0"></i></asp:LinkButton>
+                <asp:LinkButton runat="server" ID="btnSignOut" class="text-muted" OnClick="btnSignOut_Click"><i class="fa fa-sign-out fa-3x ml-2 mr-0"></i></asp:LinkButton>
+            </div>
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/"><i class="fa fa-arrow-circle-right"></i>Accueil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Fonctionnalités"><i class="fa fa-arrow-circle-right"></i>Fonctionnalités</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Tarifs"><i class="fa fa-arrow-circle-right"></i>Tarif</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Contact"><i class="fa fa-arrow-circle-right"></i>Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a runat="server" id="Abonnement" class="nav-link" href="/Abonnement" visible="false"><i class="fa fa-arrow-circle-right"></i>Abonnement</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Espace_client"><i class="fa fa-arrow-circle-right"></i>Espace client</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <span runat="server" id="lblUserLoggedIn"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="navbar-header-logo">
+            <div class="container">
+                <a href="/">
+                    <img src="/images/logo_kopelia.PNG" alt="logo notalia" style="max-width: 230px" /></a>
+            </div>
+        </div>
+        <hr class="mb-3"/>
+
+        <div id="MobileMaster" class="container">
+            <%--<h1>Mobile Master Page</h1>--%>
+            <asp:ContentPlaceHolder runat="server" ID="FeaturedContent" />
+            <section class="content-wrapper main-content clear-fix">
+                <asp:ContentPlaceHolder ID="MainContentMenu" runat="server">
+                    <div class="card">
+                            <div class="card-header" style="background:rgb(136, 46, 20)">
+                                <button type="button" class="btn"><i class="fa fa-minus"></i></button>
+                                Menu
+                            </div>
+                            <div class="card-body">
+                                <div class="sub-card">
+                                    <div class="card-header" style="background:#ff7800">
+                                        <button type="button" class="btn"><i class="fa fa-minus"></i></button>
+                                        Actes portant sur la transmission du patrimoine à titre gratuit
+                                    </div>
+                                    <div class="card-body pb-2">
+                                        <a href="/BF02-19">1.1 Attestation notariée</a><br />
+                                        <a href="/DON01">1.2 Donation et donation partage (1 donateur)</a><br />
+                                        <a href="/DON02">1.3 Donation et donation partage (2 donateurs)</a><br />
+                                        <a href="/DON-DROITS">1.4 Donation - Calcul des droits de mutation à titre gratuit</a><br />
+                                        <a href="/SUCC-DROITS">1.5 Succession - Calcul des droits de mutation à titre gratuit</a><br />
+                                        <a href="/BF02-121">1.6 Notoriété après décès</a><br />
+                                        <a href="/SUCC01">1.7 Règlement successoral ab intestat</a>
+                                    </div>
+                                </div>
+                                <div class="sub-card">
+                                    <div class="card-header" style="background:#ff7800">
+                                        <button type="button" class="btn"><i class="fa fa-minus"></i></button>
+                                        Actes de partage et de licitation - indivision familiale
+                                    </div>
+                                    <div class="card-body pb-2">
+                                        <a href="/BF12-10">2.1 Cession de droit indivis – Indivision familiale</a><br />
+                                        <a href="/BF12-7">2.2 Licitation faisant cesser une indivision familiale</a><br />
+                                        <a href="/BF12-8">2.3 Licitation faisant cesser une indivision suite à divorce ou rupture de PACS</a><br />
+                                        <a href="/BF12-2">2.4 Partage de biens de communauté consécutif à divorce (art 746 CGI)</a><br />
+                                        <a href="/BF12-1">2.5 Partage de biens de communauté ou de succession (art 748 CGI)</a><br />
+                                        <a href="/BF12-1b">2.6 Partage de biens indivis - Indivision familiale (art 748 CGI)</a><br />
+                                        <a href="/BF12-2b">2.7 Partage de biens indivis consécutif à divorce ou rupture de PACS (art 746 CGI)</a>
+                                    </div>
+                                </div>
+                                <div class="sub-card">
+                                    <div class="card-header" style="background:#ff7800">
+                                        <button type="button" class="btn"><i class="fa fa-minus"></i></button>
+                                        Actes relatifs régissant les liens familiaux
+                                    </div>
+                                    <div class="card-body pb-2">
+                                        <a href="/BF17">3.1 Changement de régime matrimonial</a><br />
+                                        <a href="/BF02-5">3.2 Contrat de mariage</a><br />
+                                        <a href="/BF02-9">3.3 Donation entre époux</a><br />
+                                        <a href="/BF10">3.4 Liquidation d'un régime communautaire dans le cas d'un divorce</a><br />
+                                        <a href="/BF02-11">3.5 Mandat posthume & Mandat de protection future</a><br />
+                                        <a href="/BF02-2">3.6 Pacte civil de solidarité</a><br />
+                                        <a href="/BF02-13">3.7 Procuration</a><br />
+                                        <a href="/BF02-16">3.8 Testaments (authentique et olographe)</a>
+                                    </div>
+                                </div>
+                                <div class="sub-card">
+                                    <div class="card-header" style="background:#ff7800">
+                                        <button type="button" class="btn"><i class="fa fa-minus"></i></button>
+                                        Actes relatifs aux biens immobiliers
+                                    </div>
+                                    <div class="card-body pb-2">
+                                        <a href="/BF03">4.1 Baux de droit commun (- de 12 ans)</a><br />
+                                        <a href="/BF04">4.2 Baux spécifiques (+ de 12 ans)</a><br />
+                                        <a href="/BF02-122">4.3 Notoriété prescription acquisitive</a><br />
+                                        <a href="/BF15">4.4 Ventes en l'état futur d'achèvement</a><br />
+                                        <a href="/BF01">4.5 Ventes immobilières</a>
+                                    </div>
+                                </div>
+                                <div class="sub-card">
+                                    <div class="card-header" style="background:#ff7800">
+                                        <button type="button" class="btn"><i class="fa fa-minus"></i></button>
+                                        Actes relatifs à l'activité économique
+                                    </div>
+                                    <div class="card-body pb-2">
+                                        <a href="/BF12-12">5.1 Cession de droit indivis - Droit commun</a><br />
+                                        <a href="/BF061">5.2 Cession de droits sociaux d'une SCI d'attribution</a><br />
+                                        <a href="/BF062">5.3 Cession de droits sociaux ordinaire</a><br />
+                                        <a href="/BF08">5.4 Crédit bail</a><br />
+                                        <a href="/BF09">5.5 Echange</a><br />
+                                        <a href="/BF12-9">5.6 Licitation faisant cesser une indivision de droit commun</a><br />
+                                        <a href="/BF11">5.7 Mainlevées et quittances</a><br />
+                                        <a href="/BF12-3">5.8 Partage de droit commun</a><br />
+                                        <a href="/BF13">5.9 Prêts hypothécaires</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </asp:ContentPlaceHolder>
+                <asp:ContentPlaceHolder runat="server" ID="MainContent" />
+            </section>
+            <%--<friendlyUrls:ViewSwitcher runat="server" />--%>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <a href="/">
+                            <img src="/images/logo_kopelia.PNG" alt="logo notalia" style="max-width: 160px" /></a>
+                    </div>
+                    <div class="col-12 text-center mt-2">
+                        <span>583 avenue des Bousquets - ZAC des Bousquets
+                            <br />
+                            83390 CUERS - Tél : 04 94 12 20 53
+                        </span>
+                        <br />
+                        <span>SAS au Capital de 89 200 Euros</span>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </form>
+</body>
+</html>
